@@ -23,82 +23,31 @@
 
 ## 🎯 Project Overview & Objective
 
-This repository contains the complete implementation for **Phase 1** of the **BCSE331L Exploratory Data Analysis Course Project**. The primary goal is to perform end-to-end data preprocessing, statistical inspection, data cleaning, feature engineering/transformation, and comprehensive exploratory data analysis (Univariate, Bivariate, and Multivariate) on the assigned dataset.
+This repository contains the complete implementation for **Phase 1** of the **BCSE331L Exploratory Data Analysis Course Project**, covering data preprocessing, statistical inspection, data cleaning, feature engineering, and exploratory data analysis.
 
 **Dataset Source**: [bank-full.csv](https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv)
 
 ---
 
-## 🛠️ Phase 1 Tasks & Implementation Summary
+## 🛠️ Phase 1 Tasks & Implementation
 
-All 8 mandatory tasks prescribed for Phase 1 have been implemented, verified, and documented:
-
-```
-┌────────────────────────────────────────────────────────────────────────────┐
-│                             EDA Phase 1 Workflow                           │
-└────────────────────────────────────────────────────────────────────────────┘
-        │
-        ├── 1. Loading the Dataset (Pandas read_csv with delimiter ';')
-        ├── 2. Basic Statistical Analysis (.shape, .dtypes, .describe(), metrics)
-        ├── 3. Handling Missing Data (Checking nulls, numeric mean imputation)
-        ├── 4. Data Cleaning (Duplicate removal, column whitespace stripping)
-        ├── 5. Data Transformation (Age binning, log transform on duration)
-        ├── 6. Univariate Analysis (3+ Visualizations: Histplot, Countplot, Boxplot)
-        ├── 7. Bivariate Analysis (3+ Visualizations: Scatterplot, Boxplots)
-        └── 8. Multivariate Analysis (3+ Visualizations: Hue Scatter, Hue Boxplot, Heatmap)
-```
-
----
-
-### Detailed Task Breakdown
-
-#### 1. Loading the Dataset
-- Loaded directly from the official remote URL using `pd.read_csv(url, sep=';')`.
-- Initialized DataFrame `bank_data` with shape `(41188, 21)` and previewed the initial records.
-
-#### 2. Basic Statistical Analysis
-- Inspected dataset dimensions (`41188` records, `21` attributes).
-- Analyzed attribute data types (`int64`, `float64`, and `object`).
-- Computed 5-number summaries and parametric statistics:
-  - Comprehensive statistical tables (`.describe()` and `.describe(include='all')`).
-  - Key metrics: Mean Age (~40.02 yrs), Median Duration (180.0s), Max Duration (4918s), Min Duration (0s), Std Dev of Duration (259.28s).
-
-#### 3. Handling Missing Data
-- Checked for `NaN`/null values across all columns using `.isnull().sum()`.
-- Implemented mean imputation on all numeric features (`int64`, `float64`) using `fillna()`.
-- Re-verified post-imputation integrity ensuring 0 missing values.
-
-#### 4. Data Cleaning
-- Detected and removed 12 duplicate records via `drop_duplicates(inplace=True)`, yielding a cleaned dataset of **41,176 records**.
-- Stripped unnecessary leading and trailing whitespace from column identifiers using `columns.str.strip()`.
-
-#### 5. Data Transformation & Feature Engineering
-- **Categorical Binning**: Created `age_group` by binning `age` into 4 distinct groups:
-  - `Young` (0–30), `Adult` (31–45), `Middle` (46–60), and `Senior` (61–100).
-- **Logarithmic Transformation**: Engineered `log_duration` via `np.log1p(duration)` to normalize the right-skewed distribution of call durations.
-
-#### 6. Univariate Analysis (3 Visualizations)
-1. **Age Distribution**: Histogram with Kernel Density Estimation (KDE) showing client age spread (peaks around 30–40 years).
-2. **Job Category Distribution**: Categorical countplot highlighting predominant professions (e.g., admin., blue-collar, technician).
-3. **Call Duration Distribution**: Vertical boxplot highlighting the spread and identifying long call outliers.
-
-#### 7. Bivariate Analysis (3 Visualizations)
-1. **Age vs Duration**: Scatter plot examining relationship and clustering between customer age and call duration.
-2. **Marital Status vs Duration**: Boxplot comparing call duration patterns across marital categories (`married`, `single`, `divorced`, `unknown`).
-3. **Education Level vs Age**: Boxplot showing the demographic age distribution across different education tiers (`basic.4y`, `high.school`, `university.degree`, etc.).
-
-#### 8. Multivariate Analysis (3 Visualizations)
-1. **Age vs Duration segmented by Subscription Outcome (`y`)**: Scatter plot with hue mapping indicating successful term deposit conversions (`yes`/`no`).
-2. **Job Category vs Age segmented by Subscription Outcome (`y`)**: Boxplot evaluating conversion patterns across various job types and age groups.
-3. **Correlation Matrix Heatmap**: Heatmap with annotated Pearson correlation coefficients across all numeric variables (economic indicators: `euribor3m`, `emp.var.rate`, `nr.employed`, etc.).
-
----
-
-## 📈 Key Insights from Phase 1 EDA
-
-- **Call Duration is Strongly Correlated with Deposit Success**: Clients with higher duration phone calls show a substantially higher likelihood of subscribing (`y = yes`).
-- **Demographics**: The majority of targeted clients are between 30 and 45 years old, primarily working in `admin.`, `blue-collar`, and `technician` roles.
-- **Economic Indicators**: High collinearity is observed among economic parameters (`emp.var.rate`, `euribor3m`, and `nr.employed`), reflecting macroeconomic trends during the campaign period.
+1. **Loading the Dataset**: Loaded dataset (`bank-full.csv`, 41,188 rows × 21 columns) via pandas with `;` separator.
+2. **Basic Statistical Analysis**: Computed `.shape`, `.dtypes`, summary statistics (`.describe()`), mean, median, min, max, and standard deviation.
+3. **Handling Missing Data**: Checked for null values (`.isnull().sum()`) and applied mean imputation to numeric columns.
+4. **Data Cleaning**: Removed 12 duplicate records (yielding 41,176 rows) and stripped whitespace from column names.
+5. **Data Transformation**: Binned `age` into 4 groups (`Young`, `Adult`, `Middle`, `Senior`) and applied `log1p` transformation to `duration`.
+6. **Univariate Analysis (3 Visualizations)**:
+   - Age distribution (Histogram with KDE)
+   - Job distribution (Countplot)
+   - Call duration distribution (Boxplot)
+7. **Bivariate Analysis (3 Visualizations)**:
+   - Age vs Duration (Scatterplot)
+   - Marital Status vs Duration (Boxplot)
+   - Education Level vs Age (Boxplot)
+8. **Multivariate Analysis (3 Visualizations)**:
+   - Age vs Duration with Outcome `y` (Hue Scatterplot)
+   - Job Category vs Age with Outcome `y` (Hue Boxplot)
+   - Correlation Matrix of numeric indicators (Heatmap)
 
 ---
 
@@ -106,8 +55,8 @@ All 8 mandatory tasks prescribed for Phase 1 have been implemented, verified, an
 
 ```
 lakshya_gupta_eda/
-├── Lakshya_gupta_eda.ipynb   # Complete Jupyter Notebook containing code, outputs & visualizations
-└── README.md                 # Project documentation and submission details
+├── Lakshya_gupta_eda.ipynb   # Jupyter Notebook containing code, outputs & visualizations
+└── README.md                 # Project documentation
 ```
 
 ---
