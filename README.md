@@ -25,7 +25,7 @@
 
 This repository contains the complete implementation for **Phase 1** of the **BCSE331L Exploratory Data Analysis Course Project**, covering data preprocessing, statistical inspection, data cleaning, feature engineering, and exploratory data analysis.
 
-**Dataset Source**: [bank-full.csv](https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv)
+**Dataset Source**: https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv
 
 ---
 
