@@ -25,12 +25,7 @@
 
 This repository contains the complete implementation for **Phase 1** of the **BCSE331L Exploratory Data Analysis Course Project**. The primary goal is to perform end-to-end data preprocessing, statistical inspection, data cleaning, feature engineering/transformation, and comprehensive exploratory data analysis (Univariate, Bivariate, and Multivariate) on the assigned dataset.
 
-### 📊 Dataset Details
-- **Dataset Name**: Bank Marketing Dataset (`bank-full.csv`)
-- **Source**: Shared via course repository `https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv`
-- **Delimiter**: Semicolon (`;`)
-- **Initial Shape**: 41,188 rows × 21 columns
-- **Domain**: Banking & Direct Marketing Campaigns (Predicting term deposit subscription `y`)
+**Dataset Source**: [bank-full.csv](https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv)
 
 ---
 
@@ -114,44 +109,6 @@ lakshya_gupta_eda/
 ├── Lakshya_gupta_eda.ipynb   # Complete Jupyter Notebook containing code, outputs & visualizations
 └── README.md                 # Project documentation and submission details
 ```
-
----
-
-## 💻 How to Run the Notebook
-
-### Option 1: Google Colab (Recommended)
-1. Click the **Open In Colab** badge at the top or click [here](https://colab.research.google.com/github/2005lakshya/lakshya_gupta_eda/blob/main/Lakshya_gupta_eda.ipynb).
-2. Run all cells sequentially via `Runtime` -> `Run all` (or `Ctrl + F9`).
-
-### Option 2: Local Environment
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/2005lakshya/lakshya_gupta_eda.git
-   cd lakshya_gupta_eda
-   ```
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy matplotlib seaborn jupyter
-   ```
-3. Launch Jupyter Notebook:
-   ```bash
-   jupyter notebook Lakshya_gupta_eda.ipynb
-   ```
-
----
-
-## 📜 Submission Checklist Verification
-
-- [x] Dataset loaded successfully from remote URL (`bank-full.csv`)
-- [x] Basic statistical analysis computed and displayed
-- [x] Missing data checked and imputed
-- [x] Duplicate records cleaned and column names formatted
-- [x] Data transformations (binning + log scaling) implemented
-- [x] Univariate analysis with **3 visualizations** generated and visible
-- [x] Bivariate analysis with **3 visualizations** generated and visible
-- [x] Multivariate analysis with **3 visualizations** generated and visible
-- [x] Jupyter notebook properly executed with all rendered chart outputs saved
-- [x] Public GitHub repository with clean documentation
 
 ---
 
