@@ -1,10 +1,5 @@
-# Exploratory Data Analysis (EDA) Course Project — Phase 1
+# Exploratory Data Analysis (EDA) Course Project
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/2005lakshya/lakshya_gupta_eda/blob/main/Lakshya_gupta_eda.ipynb)
-[![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![Status](https://img.shields.io/badge/Phase%201-Completed-success.svg)]()
-
----
 
 ## 📌 Student & Course Information
 
