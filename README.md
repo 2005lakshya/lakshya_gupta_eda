@@ -18,7 +18,12 @@
 
 ## 🎯 Project Overview & Objective
 
-This repository contains the complete implementation for **Phase 1** of the **BCSE331L Exploratory Data Analysis Course Project**, covering data preprocessing, statistical inspection, data cleaning, feature engineering, and exploratory data analysis.
+This repository contains the complete implementation for **Phase 1** and **Phase 2** of the **BCSE331L Exploratory Data Analysis Course Project**.
+
+- **Phase 1** covers data preprocessing, statistical inspection, data cleaning, feature engineering, and exploratory visualizations.
+- **Phase 2** covers 1D, 2D and 3D statistical analysis (with hypothesis tests) and unsupervised learning using K-Means and Hierarchical clustering.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/2005lakshya/lakshya_gupta_eda/blob/main/Lakshya_gupta_eda.ipynb)
 
 **Dataset Source**: https://raw.githubusercontent.com/salemprakash/EDA/main/Data/bank-full.csv
 
@@ -46,11 +51,21 @@ This repository contains the complete implementation for **Phase 1** of the **BC
 
 ---
 
+## 🧪 Phase 2 Tasks & Implementation
+
+1. **1D Statistical Analysis**: Central tendency, dispersion, skewness and kurtosis for numeric features; IQR outlier detection; frequency tables; KDE plot and pie chart of `y`.
+2. **2D Statistical Analysis**: Covariance and Spearman correlation heatmap; Pearson/Spearman correlation, Welch t-test, one-way ANOVA and chi-square test; stacked bar chart and hexbin plot.
+3. **3D Statistical Analysis**: Three-way pivot and contingency tables; partial correlation; 3D scatter plot, heatmap and pair plot.
+4. **K-Means Clustering**: Scaled 6 features, chose **k = 4** using the Elbow method and Silhouette score, and visualized clusters with PCA.
+5. **Hierarchical Clustering**: Ward dendrogram on a 2,000-row sample, compared linkage methods, and measured agreement with K-Means (ARI = 0.562).
+
+---
+
 ## 📁 Repository Structure
 
 ```
 lakshya_gupta_eda/
-├── Lakshya_gupta_eda.ipynb   # Jupyter Notebook containing code, outputs & visualizations
+├── Lakshya_gupta_eda.ipynb   # Jupyter Notebook: Phase 1 & Phase 2 code, outputs & visualizations
 └── README.md                 # Project documentation
 ```
 
