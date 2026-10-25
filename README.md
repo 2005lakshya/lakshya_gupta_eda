@@ -64,9 +64,9 @@ This repository contains the complete implementation for **Phase 1**, **Phase 2*
 
 ## 📉 Phase 3 Tasks & Implementation
 
-1. **Module 6 – Principal Component Analysis (PCA)**: Standardized 6 features (`age`, `duration`, `campaign`, `previous`, `euribor3m`, `cons.conf.idx`), fitted PCA, and plotted a scree plot with cumulative explained variance. **5 components** are needed to retain ≥ 90% of the variance (91.96%), and the data was projected onto this reduced subspace.
-2. **Module 7 – Simple Linear Regression (SLR)**: Predicted call `duration` from `euribor3m` with an 80/20 train-test split. The model gave β₀ = 277.60, β₁ = −5.48, MSE = 66,854.54 and R² ≈ 0, showing that the Euribor rate has almost no linear relationship with call duration.
-3. **Module 7 – Classification (Logistic Regression)**: Predicted subscription outcome `y` from 3 principal components. It reached **89.86% accuracy**, but recall for the `yes` class is only 0.26 (F1 = 0.37) because the classes are imbalanced. Results are shown with a classification report and a confusion matrix.
+1. **Module 6 – Principal Component Analysis (PCA)**: Standardized 8 numeric features (`age`, `campaign`, `previous`, `emp.var.rate`, `cons.price.idx`, `cons.conf.idx`, `euribor3m`, `nr.employed`), fitted PCA, and plotted a scree plot with cumulative explained variance plus a PC1 vs PC2 projection. PC1 alone explains 46.8% (mainly the correlated economic indicators), and **5 components** retain ≥ 90% of the variance (94.28%). The data was projected onto this 5-dimensional subspace. `duration` is excluded because it is only known after the call, so it would leak the outcome.
+2. **Module 7 – Simple Linear Regression (SLR)**: Predicted `euribor3m` from `emp.var.rate` (Pearson r = 0.972) with an 80/20 train-test split. Results: β₀ = 3.532, β₁ = 1.074, MSE = 0.162, RMSE = 0.403, **R² = 0.946**. The notebook shows the fitted line and a residual plot.
+3. **Module 7 – Classification (Logistic Regression)**: Predicted subscription outcome `y` from the 5 principal components. The pipeline is StandardScaler → PCA → Logistic Regression, fitted on the training set only, with a stratified split and balanced class weights. Results: **ROC-AUC = 0.757**, accuracy = 71.36%, and recall for the `yes` class = 0.73 (precision 0.24, F1 = 0.37). The notebook shows the confusion matrix and ROC curve.
 
 ---
 
